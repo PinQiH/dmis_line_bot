@@ -41,8 +41,38 @@ def callback(request):
                     elif mtext == '學生專區':
                         func.sendStudent(event)
                     
-                    if mtext == '美食推薦':
+                    elif mtext == '美食推薦':
                         func.sendFood(event)
+                    
+                    elif mtext == '恩家食堂':
+                        func.sendres1(event)
+                    
+                    elif mtext == '泛美台式自助餐':
+                        func.sendres2(event)
+
+                    elif mtext == '佳佳義大利麵':
+                        func.sendres3(event)
+
+                    elif mtext == '三顧茅廬-內湖文湖店':
+                        func.sendres4(event)
+
+                    elif mtext == '豬窩窩咖啡廚房':
+                        func.sendres5(event)
+
+                    elif mtext == '285小老闆':
+                        func.sendres6(event)
+
+                    elif mtext == '有人知影快炒':
+                        func.sendres7(event)
+
+                    elif mtext == '包子&ME嘉義火雞肉飯':
+                        func.sendres8(event)
+
+                    elif mtext == '來佳海南雞飯':
+                        func.sendres9(event)
+
+                    elif mtext == '日久阿囉哈早餐':
+                        func.sendres0(event)
                         
         return HttpResponse()  
     

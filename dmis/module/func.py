@@ -225,3 +225,132 @@ def sendFood(event):
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
 
+def sendres1(event):
+    try:
+        message = LocationSendMessage(
+            title = '恩家食堂',
+            address = '114台北市內湖區環山路一段92號',
+            latitude = 25.08677517190767,
+            longitude = 121.56746663832266 
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
+def sendres2(event):
+    try:
+        message = LocationSendMessage(
+            title = '泛美台式自助餐',
+            address = '114台北市內湖區文湖街71號',
+            latitude = 25.086837104168257, 
+            longitude = 121.56399425313309
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
+def sendres3(event):
+    try:
+        message = LocationSendMessage(
+            title = '佳佳義大利麵',
+            address = '114台北市內湖區文湖街67號',
+            latitude = 25.08697507097801, 
+            longitude = 121.56350791874331, 
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
+def sendres4(event):
+    try:
+        message = LocationSendMessage(
+            title = '三顧茅廬-內湖文湖店',
+            address = '114台北市內湖區文湖街73號',
+            latitude = 25.086784337198793, 
+            longitude = 121.56278679097369, 
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
+def sendres5(event):
+    try:
+        message = LocationSendMessage(
+            title = '豬窩窩咖啡廚房',
+            address = '114台北市內湖區文湖街65號',
+            latitude = 25.086928037550397, 
+            longitude = 121.56368589546129 
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
+def sendres6(event):
+    try:
+        message = LocationSendMessage(
+            title = '285小老闆',
+            address = '114台北市內湖區內湖路一段285巷68弄7號',
+            latitude = 25.08575307190445, 
+            longitude = 121.56719097271251
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
+def sendres7(event):
+    try:
+        message = LocationSendMessage(
+            title = '無人知影快炒',
+            address = '114台北市內湖區內湖路一段285巷65弄7號',
+            latitude = 25.084667908600657, 
+            longitude = 121.56723573832254
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
+def sendres8(event):
+    try:
+        message = LocationSendMessage(
+            title = '包子&ME 嘉義火雞肉飯',
+            address = '114台北市內湖區內湖路一段285巷59弄19號',
+            latitude = 25.08388428159525, 
+            longitude = 121.56784787462804
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
+def sendres9(event):
+    try:
+        message = LocationSendMessage(
+            title = '來佳海南雞飯',
+            address = '114台北市內湖區內湖路一段285巷8弄3號',
+            latitude = 25.082821409431073, 
+            longitude = 121.5663164033996
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
+def sendres0(event):
+    try:
+        message = LocationSendMessage(
+            title = '日久阿囉哈早餐',
+            address = '114台北市內湖區內湖路一段285巷65弄1號',
+            latitude = 25.084709300866436, 
+            longitude = 121.56701226352028
+        )
+
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
