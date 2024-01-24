@@ -13,15 +13,23 @@ def sendNews(event):
             template = ButtonsTemplate(
                 thumbnail_image_url='https://techexpo.moe.edu.tw/search/images/upload/schools/68/b/2021090903235101_1.jpg',
                 title='最新消息',
-                text='最新消息來了!\n德明資管系又有新花招了!!\n你絕對不能錯過!!!',
+                text='最新消息來了!\n德明資管系又有新花招!!\n你絕對不能錯過!!!',
                 actions=[
-                    MessageTemplateAction(
-                        label='最新消息',
-                        text='@最新消息'
+                    URITemplateAction(
+                        label='一般公告',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/News-List/gene.php'
                     ),
                     URITemplateAction(
-                        label='連結網頁',
-                        uri='http://localhost/DMIS_IM/#'
+                        label='招生公告',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/News-List/stud.php'
+                    ),
+                    URITemplateAction(
+                        label='徵才資訊',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/News-List/invite.php'
+                    ),
+                    URITemplateAction(
+                        label='榮譽榜',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/News-List/glory.php'
                     ),
                 ]
             )
