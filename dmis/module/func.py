@@ -184,27 +184,44 @@ def sendStudent(event):
 def sendFood(event):
     try:
         message = TextSendMessage(
-            text='嚕喵毛，今天要打掃哪裡呢？',
+            text='這裡有口袋名單必備的好味道！',
             quick_reply=QuickReply(
             items=[
                 QuickReplyButton(
-                    action=MessageAction(label="客廳",text="客廳")
+                    action=MessageAction(label="恩家食堂",text="恩家食堂")
                     ),
                 QuickReplyButton(
-                    action=MessageAction(label="房間",text="房間")
+                    action=MessageAction(label="泛美台式自助餐",text="泛美台式自助餐")
                     ),
                 QuickReplyButton(
-                    action=MessageAction(label="廚房",text="廚房")
+                    action=MessageAction(label="佳佳義大利麵",text="佳佳義大利麵")
                     ),
                 QuickReplyButton(
-                    action=MessageAction(label="廁所",text="廁所")
+                    action=MessageAction(label="三顧茅廬-內湖文湖店",text="三顧茅廬-內湖文湖店")
                     ),
                 QuickReplyButton(
-                    action=MessageAction(label="不想打掃",text="不想打掃")
+                    action=MessageAction(label="豬窩窩咖啡廚房",text="豬窩窩咖啡廚房")
+                    ),
+                QuickReplyButton(
+                    action=MessageAction(label="285小老闆",text="285小老闆")
+                    ),
+                QuickReplyButton(
+                    action=MessageAction(label="有人知影快炒",text="有人知影快炒")
+                    ),
+                QuickReplyButton(
+                    action=MessageAction(label="包子&ME嘉義火雞肉飯",text="包子&ME嘉義火雞肉飯")
+                    ),
+                QuickReplyButton(
+                    action=MessageAction(label="來佳海南雞飯",text="來佳海南雞飯")
+                    ),
+                QuickReplyButton(
+                    action=MessageAction(label="日久阿囉哈早餐",text="日久阿囉哈早餐")
                     ),
                 ]
             )
         )
+
         line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))   
+
