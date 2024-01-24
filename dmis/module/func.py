@@ -150,13 +150,32 @@ def sendTeacher(event):
         
 def sendStudent(event):
     try:
-        message = LocationSendMessage(
-            title = '台北教育大學',
-            address = '台北市大安區和平東路二段134號',
-            latitude = 25.024163 ,#緯度
-            longitude = 121.544888 #經度
-
-           )
+        message = TemplateSendMessage(
+            alt_text = '學生專區',
+            template = ButtonsTemplate(
+                thumbnail_image_url='https://wpvip.edutopia.org/wp-content/uploads/2022/10/shutterstock_1958383675-crop.jpg',
+                title='學生專區',
+                text='這裡是你的學習遊樂場\n滿滿的資訊、活動和歡笑等著你！',
+                actions=[
+                    URITemplateAction(
+                        label='就學貸款',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Student-List/loans.php'
+                    ),
+                    URITemplateAction(
+                        label='獎助學金',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Student-List/scholarships.php'
+                    ),
+                    URITemplateAction(
+                        label='畢業門檻',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Student-List/graduation.php'
+                    ),
+                    URITemplateAction(
+                        label='考證資訊',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Student-List/certification.php'
+                    )
+                ]
+            )
+        )
         
         line_bot_api.reply_message(event.reply_token,message)
     except:
