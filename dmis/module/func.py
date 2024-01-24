@@ -121,20 +121,28 @@ def sendAdmission(event):
         
 def sendTeacher(event):
     try:
-        message = [
-            TextSendMessage(
-                text='嚕喵毛，換毛季是打掃季！',
-            ),
-            ImageSendMessage(
-                original_content_url = "https://imgur.com/TcSD7FL.png",
-                preview_image_url = "https://imgur.com/TcSD7FL.png"
-            ),
-            StickerSendMessage(
-                 package_id='11539',
-                 sticker_id='52114124'         
+        message = TemplateSendMessage(
+            alt_text = '師資簡介',
+            template = ButtonsTemplate(
+                thumbnail_image_url='https://www.hindustantimes.com/ht-img/img/2023/09/02/1600x900/teachers_day_1693652054152_1693652065719.jpg',
+                title='師資簡介',
+                text='我們的導師們不只是教學高手\n更是資訊科技的嚮導',
+                actions=[
+                    URITemplateAction(
+                        label='專任教師',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Faculty-List/full_time_teachers.php'
+                    ),
+                    URITemplateAction(
+                        label='兼任教師',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Faculty-List/part_time_teachers.php'
+                    ),
+                    URITemplateAction(
+                        label='退休教師',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Faculty-List/retired_teachers.php'
+                    )
+                ]
             )
-            
-        ]
+        )
            
         line_bot_api.reply_message(event.reply_token,message)
     except:
