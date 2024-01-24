@@ -41,10 +41,32 @@ def sendNews(event):
 
 def sendCourse(event):
     try:
-        message = ImageSendMessage(
-            original_content_url = "https://imgur.com/TcSD7FL.png",
-            preview_image_url = "https://imgur.com/TcSD7FL.png"
-           )
+        message = TemplateSendMessage(
+            alt_text = '課程資訊',
+            template = ButtonsTemplate(
+                thumbnail_image_url='https://techexpo.moe.edu.tw/search/images/upload/schools/68/b/2021090903235101_1.jpg',
+                title='課程資訊',
+                text='準備好了嗎？\n資管系的課程規劃就像歷險般刺激\n讓你一窺資訊科技的奧秘！',
+                actions=[
+                    URITemplateAction(
+                        label='一般規劃',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Course-List/course_planning.php'
+                    ),
+                    URITemplateAction(
+                        label='修業規定',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Course-List/course_guidelines.php'
+                    ),
+                    URITemplateAction(
+                        label='課程地圖',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Course-List/map.php'
+                    ),
+                    URITemplateAction(
+                        label='課程基準表',
+                        uri='http://localhost/DMIS_IM/pages/navbar-sublist/Course-List/course_standards.php'
+                    ),
+                ]
+            )
+        )
         
         line_bot_api.reply_message(event.reply_token,message)
     except:
