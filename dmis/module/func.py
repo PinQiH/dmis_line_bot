@@ -1,7 +1,7 @@
 from django.conf import settings
 
 from linebot import LineBotApi
-from linebot.models import TemplateSendMessage, TextSendMessage, ButtonsTemplate, MessageTemplateAction, URITemplateAction, PostbackTemplateAction
+from linebot.models import *
 
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
@@ -74,10 +74,46 @@ def sendCourse(event):
 
 def sendAdmission(event):
     try:
-        message = StickerSendMessage(
-             package_id='11539',
-             sticker_id='52114124'         
-             )
+        message = TemplateSendMessage(
+            alt_text = '招生資訊',
+            template = CarouselTemplate(
+                columns = [
+                    CarouselColumn(
+                        thumbnail_image_url='https://misweb.takming.edu.tw/var/file/31/1031/msys_1031_5305355_93804.png',
+                        title='大學部',
+                        text='這裡不只有程式碼\n還有夢想的擁抱',
+                        actions=[
+                            URITemplateAction(
+                                label='大學部',
+                                uri='http://localhost/DMIS_IM/pages/navbar-sublist/Admissions-List/undergraduate.php'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://media.gq.com.tw/photos/65a1197131c13dcbb074eec0/16:9/w_2560%2Cc_limit/1452604857',
+                        title='AI加值智慧製造專班',
+                        text='歡迎來到 AI 加值智慧製造專班~',
+                        actions=[
+                            URITemplateAction(
+                                label='AI加值智慧製造專班',
+                                uri='http://localhost/DMIS_IM/pages/navbar-sublist/Admissions-List/masterDegree.php'
+                            ),
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.cio.com.tw/wp-content/uploads/AI-ISO%E6%A8%99%E6%BA%96156496.jpg',
+                        title='AI跨領域技優專班',
+                        text='快來挑戰自己\n成為 AI 技術的先驅！',
+                        actions=[
+                            URITemplateAction(
+                                label='AI跨領域技優專班',
+                                uri='http://localhost/DMIS_IM/pages/navbar-sublist/Admissions-List/aiDegree.php'
+                            ),
+                        ]
+                    )
+                ]
+            )
+        )
         
         line_bot_api.reply_message(event.reply_token,message)
     except:
